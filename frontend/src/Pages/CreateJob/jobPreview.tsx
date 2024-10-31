@@ -19,7 +19,7 @@ type FormValuesDetails = {
   location: string;
   pay: string;
   description: string;
-  requiredSkills: string[];
+  requiredSkills: string;
 };
 
 const JobPreview = () => {
@@ -141,7 +141,9 @@ const JobPreview = () => {
             <div className="text-lg border-b border-gray-300 mb-2 font-bold">
               Required Skills
             </div>
-            <span className="text-[#686868">{details.requiredSkills.join(", ")}</span>
+            <div className="text-[#686868] mx-2">
+              {details.requiredSkills}
+            </div>
 
             <div className="text-lg border-b border-gray-300 mb-2 font-bold">
               Questions

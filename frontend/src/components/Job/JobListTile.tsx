@@ -11,29 +11,26 @@ const JobListTile = (props: any) => {
 
   const getMatchStatus = (job: Job) => {
     let matchStatus = {
-      text: "0% Match",
+      text: "Low Match",
       style: { backgroundColor: "#FF5757", color: "white" },
     };
 
     const skills = useUserStore((state) => state.skills);
     if (skills && job.requiredSkills) {
-      const applicantSkillsArray = skills.map((skill) => skill.toLowerCase());
-      const requiredSkillsArray = job.requiredSkills.map((skill) => skill.toLowerCase());
-      const matchingSkillsCount = requiredSkillsArray.filter((skill) =>
+      const applicantSkillsArray = skills
+        .split(",")
+        .map((skill) => skill.trim().toLowerCase());
+      const requiredSkillsArray = job.requiredSkills
+        .split(",")
+        .map((skill) => skill.trim().toLowerCase());
+      const isMatch = requiredSkillsArray.some((skill) =>
         applicantSkillsArray.includes(skill)
-      ).length;
-
-      const matchPercentage = Math.round(
-        (matchingSkillsCount / requiredSkillsArray.length) * 100
       );
 
-      if (matchPercentage > 0) {
+      if (isMatch) {
         matchStatus = {
-          text: `${matchPercentage}% Match`,
-          style: { 
-            backgroundColor: matchPercentage >= 75 ? "#00E000" : "#FFBF00", // Green for high match, yellow for moderate
-            color: "white",
-          },
+          text: "Match",
+          style: { backgroundColor: "#00E000", color: "white" },
         };
       }
     }
