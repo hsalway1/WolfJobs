@@ -13,6 +13,7 @@
 [![File Count](https://img.shields.io/github/directory-file-count/hsalway1/WolfJobs)](https://github.com/hsalway1/WolfJobs) 
 [![Language Count](https://img.shields.io/github/languages/count/hsalway1/WolfJobs)](https://github.com/hsalway1/WolfJobs)
 [![Top Language](https://img.shields.io/github/languages/top/hsalway1/WolfJobs)](https://github.com/hsalway1/WolfJobs)
+[![DOI](https://zenodo.org/badge/866310682.svg)](https://doi.org/10.5281/zenodo.14029522)
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 
